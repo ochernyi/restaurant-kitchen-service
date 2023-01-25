@@ -1,38 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
-        crossorigin="anonymous">
-  {% block title %}
-    <title>Kitchen</title>
-  {% endblock %}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ ASSETS_ROOT }}/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="{{ ASSETS_ROOT }}/img/favicon.png">
+  <link rel="canonical" href="https://appseed.us/ui-kit/soft-ui-design-system"/>
+
+  <title>
+    {% block title %}{% endblock %}
+  </title>
+
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <!-- Nucleo Icons -->
+  <link href="{{ ASSETS_ROOT }}/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="{{ ASSETS_ROOT }}/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link href="{{ ASSETS_ROOT }}/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link id="pagestyle" href="{{ ASSETS_ROOT }}/css/soft-design-system.css?v=1.0.1" rel="stylesheet" />
+
+  <!-- Specific CSS goes HERE -->
+  {% block stylesheets %}{% endblock stylesheets %}
 
 </head>
-<body>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-3">
 
-            {% block sidebar %}
-                {% include "includes/sidebar.html" %}
-            {% endblock %}
+<body class="{% block body_class %}{% endblock body_class %}">
 
-        </div>
-        <div class="col-sm-9">
+    {% include "includes/navigation.html" %}
 
-            {% block content %}{% endblock %}
+    {% include "includes/header.html" %}
 
-            {% block pagination %}
-                {% include "includes/pagination.html" %}
-            {% endblock %}
+    {% block content %}{% endblock content %}
 
-        </div>
-    </div>
-</div>
+    {% include "includes/pagination.html" %}
+
+    {% include "includes/footer.html" %}
+
+    {% include "includes/scripts.html" %}
+
+  <!-- Specific JS goes HERE -->
+  {% block javascripts %}
+    {% include "includes/script_page.html" %}
+  {% endblock javascripts %}
+
 </body>
 </html>

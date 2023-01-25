@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+  <div class="p-6">
   <h1>
     Dish: {{ dish.name }}
     <a style="color: red"
@@ -13,11 +14,12 @@
   <p><strong>Price:</strong> {{ dish.price }}</p>
   <p><strong>Dish type:</strong> {{ dish.dish_type }}</p>
 
-  <a href="{% url 'kitchen:dish-update' pk=dish.id %}">
+  <a class="fs-3 fw-bold" style="color: blue" href="{% url 'kitchen:dish-update' pk=dish.id %}">
     Update
   </a>
+    <hr>
   <div class="ml-3">
-    <h4>Cooks</h4>
+    <h4>Cooks:</h4>
     {% if dish in user.dishes.all %}
       <a href="{% url 'kitchen:toggle-dish-assign' pk=dish.id %}" class="btn btn-danger link-to-page">
         Delete me from this car
@@ -36,4 +38,6 @@
       <p>No cooks!</p>
     {% endfor %}
   </div>
+  </div>
+
 {% endblock %}
