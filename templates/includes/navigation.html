@@ -20,9 +20,9 @@
             <div class="collapse navbar-collapse pt-3 pb-2 py-lg-0" id="navigation">
               <ul class="navbar-nav navbar-nav-hover ms-lg-12 ps-lg-5 w-100">
                 <li class="nav-item dropdown dropdown-hover mx-2">
-                  <a href="{% url 'kitchen:cook-list' %}"
+                  <a href="{% url 'kitchen:user-list' %}"
                      class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center">
-                    All cooks
+                    All users
                   </a>
 
                 <li class="nav-item dropdown dropdown-hover mx-2">
@@ -42,7 +42,7 @@
                 <li class="nav-item ms-lg-auto">
                     {% if user.is_authenticated %}
                       <li class="list-group-item">User:
-                        <a href="{% url 'kitchen:cook-detail' pk=user.id %}">{{ user.get_username }}</a>
+                        <a href="{% url 'kitchen:user-detail' pk=user.id %}">{{ user.get_username }}</a>
                       </li>
                       <li class="list-group-item"><a href="{% url 'logout' %}">
                         <i class="fa fa-sign-out me-1"></i>

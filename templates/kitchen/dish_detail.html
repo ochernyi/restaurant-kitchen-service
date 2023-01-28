@@ -19,23 +19,23 @@
   </a>
     <hr>
   <div class="ml-3">
-    <h4>Cooks:</h4>
+    <h4>users:</h4>
     {% if dish in user.dishes.all %}
       <a href="{% url 'kitchen:toggle-dish-assign' pk=dish.id %}" class="btn btn-danger link-to-page">
-        Delete me from this car
+        Delete me from this dish
       </a>
       {% else %}
       <a href="{% url 'kitchen:toggle-dish-assign' pk=dish.id %}" class="btn btn-success link-to-page">
-        Assign me from this car
+        Assign me from this dish
       </a>
     {% endif %}
 
-    {% for cook in dish.cooks.all %}
+    {% for user in dish.users.all %}
         <hr>
-        <p><strong>Name:</strong> {{ cook }}</p>
+        <p><strong>Name:</strong> {{ user }}</p>
 
     {% empty %}
-      <p>No cooks!</p>
+      <p>No users!</p>
     {% endfor %}
   </div>
   </div>

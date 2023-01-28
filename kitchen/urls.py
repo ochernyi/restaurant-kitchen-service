@@ -2,11 +2,11 @@ from django.urls import path
 
 from kitchen.views import (
     index,
-    CookListView,
-    CookDetailView,
-    CookCreateView,
-    CookUpdateView,
-    CookDeleteView,
+    UserListView,
+    UserDetailView,
+    UserCreateView,
+    UserUpdateView,
+    UserDeleteView,
     DishListView,
     DishDetailView,
     DishCreateView,
@@ -21,18 +21,18 @@ from kitchen.views import (
 
 urlpatterns = [
     path("", index, name="index"),
-    path("cooks/", CookListView.as_view(), name="cook-list"),
-    path("cooks/<int:pk>/", CookDetailView.as_view(), name="cook-detail"),
-    path("cooks/create/", CookCreateView.as_view(), name="cook-create"),
+    path("users/", UserListView.as_view(), name="user-list"),
+    path("users/<int:pk>/", UserDetailView.as_view(), name="user-detail"),
+    path("users/create/", UserCreateView.as_view(), name="user-create"),
     path(
-        "cooks/<int:pk>/update/",
-        CookUpdateView.as_view(),
-        name="cook-update"
+        "users/<int:pk>/update/",
+        UserUpdateView.as_view(),
+        name="user-update"
     ),
     path(
-        "cooks/<int:pk>/delete/",
-        CookDeleteView.as_view(),
-        name="cook-delete"
+        "users/<int:pk>/delete/",
+        UserDeleteView.as_view(),
+        name="user-delete"
     ),
     path("dishes/", DishListView.as_view(), name="dish-list"),
     path(

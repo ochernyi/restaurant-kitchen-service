@@ -5,18 +5,18 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 
-from kitchen.forms import DishForm, CookCreationForm
-from kitchen.models import Cook, Dish, DishType
+from kitchen.forms import DishForm, UserCreationForm
+from kitchen.models import User, Dish, DishType
 
 
 @login_required
 def index(request):
-    num_cooks = Cook.objects.count()
+    num_users = User.objects.count()
     num_dish = Dish.objects.count()
     num_dish_type = DishType.objects.count()
 
     context = {
-        "num_cooks": num_cooks,
+        "num_users": num_users,
         "num_dish": num_dish,
         "num_dish_type": num_dish_type,
     }
@@ -24,31 +24,31 @@ def index(request):
     return render(request, "kitchen/index.html", context=context)
 
 
-class CookListView(LoginRequiredMixin, generic.ListView):
-    model = Cook
+class UserListView(LoginRequiredMixin, generic.ListView):
+    model = User
     paginate_by = 5
 
 
-class CookDetailView(LoginRequiredMixin, generic.DetailView):
-    model = Cook
-    queryset = Cook.objects.all().prefetch_related("dishes")
+class UserDetailView(LoginRequiredMixin, generic.DetailView):
+    model = User
+    queryset = User.objects.all().prefetch_related("dishes")
 
 
-class CookCreateView(LoginRequiredMixin, generic.CreateView):
-    model = Cook
-    form_class = CookCreationForm
-    success_url = reverse_lazy("kitchen:cook-list")
+class UserCreateView(LoginRequiredMixin, generic.CreateView):
+    model = User
+    form_class = UserCreationForm
+    success_url = reverse_lazy("kitchen:user-list")
 
 
-class CookUpdateView(LoginRequiredMixin, generic.UpdateView):
-    model = Cook
-    form_class = CookCreationForm
-    success_url = reverse_lazy("kitchen:cook-list")
+class UserUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = User
+    form_class = UserCreationForm
+    success_url = reverse_lazy("kitchen:user-list")
 
 
-class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
-    model = Cook
-    success_url = reverse_lazy("kitchen:cook-list")
+class UserDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = User
+    success_url = reverse_lazy("kitchen:user-list")
 
 
 class DishListView(LoginRequiredMixin, generic.ListView):
@@ -106,11 +106,11 @@ class DishTypeDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 @login_required
 def toggle_assign_to_dish(request, pk):
-    cook = Cook.objects.get(id=request.user.id)
+    user = User.objects.get(id=request.user.id)
     if (
-            Dish.objects.get(id=pk) in cook.dishes.all()
+            Dish.objects.get(id=pk) in user.dishes.all()
     ):
-        cook.dishes.remove(pk)
+        user.dishes.remove(pk)
     else:
-        cook.dishes.add(pk)
+        user.dishes.add(pk)
     return HttpResponseRedirect(reverse_lazy("kitchen:dish-detail", args=[pk]))
