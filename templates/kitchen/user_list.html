@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}
+  Users
+{% endblock %}
+{% block content %}
+
+  <div class="p-6">
+      <h1>
+        Users List:
+        <a class="text-primary" href="{% url 'kitchen:user-create' %}">Create</a>
+      </h1>
+      {% if user_list %}
+        <ul>
+          {% for user in user_list %}
+            <li><a href="{% url 'kitchen:user-detail' pk=user.id %}">{{ user.username }}</a></li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>There aren't any users</p>
+      {% endif %}
+  </div>
+
+{% endblock %}
