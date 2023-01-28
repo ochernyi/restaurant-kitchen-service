@@ -18,6 +18,7 @@ class DishForm(forms.ModelForm):
         queryset=get_user_model().objects.all(),
         widget=forms.CheckboxSelectMultiple,
     )
+
     class Meta:
         model = Dish
         fields = "__all__"
