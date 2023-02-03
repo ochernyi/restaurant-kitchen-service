@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
+from rest_framework.generics import get_object_or_404
 
 from kitchen.forms import DishForm, UserCreationForm
 from kitchen.models import User, Dish, DishType
@@ -106,10 +107,8 @@ class DishTypeDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 @login_required
 def toggle_assign_to_dish(request, pk):
-    user = User.objects.get(id=request.user.id)
-    if (
-            Dish.objects.get(id=pk) in user.dishes.all()
-    ):
+    user = get_object_or_404(User, id=request.user.id)
+    if Dish.objects.get(id=pk) in user.dishes.all():
         user.dishes.remove(pk)
     else:
         user.dishes.add(pk)

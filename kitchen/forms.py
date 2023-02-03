@@ -9,7 +9,9 @@ class UserCreationForm(UserCreationForm):
     class Meta:
         model = User
         fields = UserCreationForm.Meta.fields + (
-            "first_name", "last_name", "years_of_experience"
+            "first_name",
+            "last_name",
+            "years_of_experience",
         )
 
 
