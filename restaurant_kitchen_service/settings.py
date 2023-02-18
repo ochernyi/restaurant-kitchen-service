@@ -28,7 +28,7 @@ DEBUG = os.environ.get("DJANGO_DEBUG", "") != "False"
 
 ASSETS_ROOT = "/static/assets"
 
-ALLOWED_HOSTS = ["127.0.0.1", "https://restaurant-vq6c.onrender.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "restaurant-vq6c.onrender.com"]
 
 
 # Application definition
