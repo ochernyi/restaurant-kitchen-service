@@ -4,7 +4,7 @@ Django project for managing cooks on the kitchen
 
 ## Check it out!
 
-[Kitchen project deployed to render]()
+[Kitchen project deployed to Render](https://restaurant-vq6c.onrender.com)
 
 ## Installation
 
