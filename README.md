@@ -6,6 +6,13 @@ Django project for managing cooks on the kitchen
 
 [Kitchen project deployed to Render](https://restaurant-vq6c.onrender.com)
 
+## Test User:
+
+login: user
+
+password: user12345
+
+
 ## Installation
 
 Python3 must be already installed
