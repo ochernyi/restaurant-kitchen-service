@@ -35,21 +35,21 @@ python manage.py runserver
 
 ## Demo
 
-<img alt="Website interface" src="https://drive.google.com/file/d/1UiXR-wkvQPwCnmV6EJ66u4jeW9Zd4RO3/view?usp=share_link"/>
+<img alt="Website interface" src="https://i.postimg.cc/J0T70HXZ/1.png"/>
 
 ## Screenshots 
 
-<img src="C:\Users\Oper\Desktop\ОД\Черный\QnA\Project\2.png">
-<img src="C:\Users\Oper\Desktop\ОД\Черный\QnA\Project\3.png">
-<img src="C:\Users\Oper\Desktop\ОД\Черный\QnA\Project\4.png">
-<img src="C:\Users\Oper\Desktop\ОД\Черный\QnA\Project\5.png">
-<img src="C:\Users\Oper\Desktop\ОД\Черный\QnA\Project\6.png">
-<img src="C:\Users\Oper\Desktop\ОД\Черный\QnA\Project\7.png">
-<img src="C:\Users\Oper\Desktop\ОД\Черный\QnA\Project\8.png">
-<img src="C:\Users\Oper\Desktop\ОД\Черный\QnA\Project\9.png">
-<img src="C:\Users\Oper\Desktop\ОД\Черный\QnA\Project\10.png">
-<img src="C:\Users\Oper\Desktop\ОД\Черный\QnA\Project\11.png">
-<img src="C:\Users\Oper\Desktop\ОД\Черный\QnA\Project\12.png">
-<img src="C:\Users\Oper\Desktop\ОД\Черный\QnA\Project\13.png">
-<img src="C:\Users\Oper\Desktop\ОД\Черный\QnA\Project\14.png">
-<img src="C:\Users\Oper\Desktop\ОД\Черный\QnA\Project\15.png">
+<img src="https://i.postimg.cc/d1Zt3VBx/2.png">
+<img src="https://i.postimg.cc/R06zQbH3/3.png">
+<img src="https://i.postimg.cc/6pZ0rrQW/4.png">
+<img src="https://i.postimg.cc/7ZPz6STt/5.png">
+<img src="https://i.postimg.cc/9fRrRbXb/6.png">
+<img src="https://i.postimg.cc/jSCjmcfT/7.png">
+<img src="https://i.postimg.cc/13LyTQP0/9.png">
+<img src="https://i.postimg.cc/NFpgP2fL/8.png">
+<img src="https://i.postimg.cc/d0rJcxtb/10.png">
+<img src="https://i.postimg.cc/7ZCxm6vY/11.png">
+<img src="https://i.postimg.cc/k4CqJv2B/12.png">
+<img src="https://i.postimg.cc/L56Sf4BS/13.png">
+<img src="https://i.postimg.cc/rFZV14PP/14.png">
+<img src="https://i.postimg.cc/3Jxr01nG/15.png">
