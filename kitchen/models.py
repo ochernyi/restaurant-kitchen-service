@@ -12,7 +12,7 @@ class User(AbstractUser):
     def __str__(self) -> str:
         if not self.first_name and self.last_name:
             return f"{self.username}"
-        return f"{self.username} ({self.first_name} {self.last_name})"
+        return f"{self.username} {self.first_name} {self.last_name}"
 
 
 class DishType(models.Model):
