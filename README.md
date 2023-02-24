@@ -36,7 +36,7 @@ python manage.py runserver
 ## Demo
 
 <img alt="Website interface" src="C:\Users\Oper\Desktop\ОД\Черный\QnA\Project\1.png"/>
-
+![Website interface](C:\Users\Oper\Desktop\ОД\Черный\QnA\Project\1.png)
 ## Screenshots 
 
 <img src="C:\Users\Oper\Desktop\ОД\Черный\QnA\Project\2.png">
