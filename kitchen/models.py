@@ -10,6 +10,8 @@ class User(AbstractUser):
         verbose_name_plural = "users"
 
     def __str__(self) -> str:
+        if not self.first_name and self.last_name:
+            return f"{self.username}"
         return f"{self.username} ({self.first_name} {self.last_name})"
 
 
