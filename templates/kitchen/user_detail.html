@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="p-6">
+    <h1>
+      Username: {{ user.username }}
+      <a style="color: red"
+        href="{% url 'kitchen:user-delete' pk=user.id %}">
+        Delete
+      </a>
+    </h1>
+
+    <p><strong>First name:</strong> {{ user.first_name }}</p>
+    <p><strong>Last name:</strong> {{ user.last_name }}</p>
+    <p>
+      <strong>Years of experience:</strong> {{ user.years_of_experience }}
+
+    </p>
+    <p><strong>Is staff:</strong> {{ user.is_staff }}</p>
+    <a class="fs-3 fw-bold" style="color: blue" href="{% url 'kitchen:user-update' pk=user.id %}" >
+      Update
+    </a>
+    <hr>
+      <div class="ml-3">
+      <h4>Dishes</h4>
+
+      {% for dish in user.dishes.all %}
+          <hr>
+          <p><strong>Name:</strong> {{ dish }}</p>
+          <p><strong>Description:</strong> {{ dish.description }}</p>
+
+      {% empty %}
+        <p>No dishes!</p>
+      {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,74 @@
+  <div class="container position-sticky z-index-sticky top-0">
+    <div class="row">
+      <div class="col-12">
+        <nav class="navbar navbar-expand-lg  blur blur-rounded top-0 z-index-fixed shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
+          <div class="container-fluid">
+            <a class="navbar-brand font-weight-bolder ms-sm-3" 
+               href="/" rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom">
+              Italian Restaurant
+            </a>
+            <button class="navbar-toggler shadow-none ms-2"
+                    type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navigation" aria-controls="navigation"
+                    aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon mt-2">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </span>
+            </button>
+            <div class="collapse navbar-collapse pt-3 pb-2 py-lg-0" id="navigation">
+              <ul class="navbar-nav navbar-nav-hover ms-lg-12 ps-lg-5 w-100">
+                <li class="nav-item dropdown dropdown-hover mx-2">
+                  <a href="{% url 'kitchen:user-list' %}"
+                     class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center">
+                    All users
+                  </a>
+
+                <li class="nav-item dropdown dropdown-hover mx-2">
+                  <a href="{% url 'kitchen:dish-type-list' %}"
+                     class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center">
+                    All dish types
+                  </a>
+
+                </li>
+                <li class="nav-item dropdown dropdown-hover mx-2">
+                  <a href="{% url 'kitchen:dish-list' %}"
+                     class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center">
+                    All dishes
+                  </a>
+
+                </li>
+                <li class="nav-item ms-lg-auto">
+                    {% if user.is_authenticated %}
+                      <li class="list-group-item">User:
+                        <a href="{% url 'kitchen:user-detail' pk=user.id %}">{{ user.get_username }}</a>
+                      </li>
+                      <li class="list-group-item"><a href="{% url 'logout' %}">
+                        <i class="fa fa-sign-out me-1"></i>
+                        <p class="d-inline text-sm z-index-1 font-weight-bold"
+                           data-bs-toggle="tooltip" data-bs-placement="bottom"
+                           title="Logout">Logout</p></a></li>
+                    {% else %}
+
+                      <li class="list-group-item"><a href="{% url 'login' %}">
+                        <i class="fa fa-sign-in me-1"></i>
+                        <p class="d-inline text-sm z-index-1 font-weight-bold"
+                           data-bs-toggle="tooltip" data-bs-placement="bottom"
+                           title="Logout">Login</p></a></li>
+                    {% endif %}
+{#                  <a class="nav-link nav-link-icon me-2" href="{% url 'logout' %}">#}
+
+{#                    <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Logout">Logout</p>#}
+                  </a>
+                </li>
+                <li class="nav-item my-auto ms-3 ms-lg-0">
+
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
