@@ -21,32 +21,31 @@
             </button>
             <div class="collapse navbar-collapse pt-3 pb-2 py-lg-0" id="navigation">
               <ul class="navbar-nav navbar-nav-hover ms-lg-12 ps-lg-5 w-100">
-                <li class="nav-item dropdown dropdown-hover mx-2">
-                  <div style="height: 40px">
-                  <a href="{% url 'kitchen:user-list' %}"
-                     class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center d-block w-100 h-100">
-                    All users
-                  </a>
+                <div style="height: 40px">
+                  <li class="nav-item dropdown dropdown-hover mx-2">                  
+                    <a href="{% url 'kitchen:user-list' %}"
+                       class="navbar-brand ms-sm-3 d-block w-100 h-100">
+                      All users
+                    </a>  
+                  </li>
+                 </div>
+                 <div style="height: 40px">
+                    <li class="nav-item dropdown dropdown-hover mx-2">                  
+                      <a href="{% url 'kitchen:dish-type-list' %}"
+                         class="navbar-brand ms-sm-3 d-block w-100 h-100">
+                        All dish types
+                      </a>                  
+                    </li>
+                 </div>
+                 <div style="height: 40px">
+                    <li class="nav-item dropdown dropdown-hover mx-2">
+                      <a href="{% url 'kitchen:dish-list' %}"
+                         class="navbar-brand ms-sm-3 d-block w-100 h-100">
+                        All dishes
+                      </a>
+                     </li>
                   </div>
-
-                <li class="nav-item dropdown dropdown-hover mx-2">
-                  <div style="height: 40px">
-                  <a href="{% url 'kitchen:dish-type-list' %}"
-                     class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center d-block w-100 h-100">
-                    All dish types
-                  </a>
-                  </div>
-
-                </li>
-                <li class="nav-item dropdown dropdown-hover mx-2">
-                  <div style="height: 40px">
-                  <a href="{% url 'kitchen:dish-list' %}"
-                     class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center d-block w-100 h-100">
-                    All dishes
-                  </a>
-                  </div>
-
-                </li>
+                
                 <li class="nav-item ms-lg-auto">
                     {% if user.is_authenticated %}
                       <li class="list-group-item">User:
